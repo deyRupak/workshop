@@ -1,1 +1,1 @@
-# SDG Skill Development Internship
+# SDG Skill Development Workshop
