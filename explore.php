@@ -1,6 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<?php
+@session_start();
+//session variables
+if(isset($_SESSION['username'])){
+    $username = $_SESSION['username'];
+    $phone_no = $_SESSION['phone_no'];
+    $email = $_SESSION['email'];
+
+    if (isset($_POST['travel'])){
+        $_SESSION['category']='travel';
+        header('Location:article.php');
+    }
+    //for food
+    else if (isset($_POST['food'])){
+        $_SESSION['category']='food';
+        header('Location:article.php');
+    }
+    //for music
+    else if (isset($_POST['music'])){
+        $_SESSION['category']='music';
+        header('Location:article.php');
+    }
+}
+?>
 <head>
     <title>WDLx2</title>
     <meta charset="utf-8">
@@ -48,11 +72,11 @@
     <!-- Header -->
     <p class="text-center" style="font-family: 'Bangers', cursive; font-size: 100px; margin-top: 2%;">Hello World!</p>
 
-
+<?php if (isset($_SESSION['username'])){ ?>
     <!-- Navbar -->
     <div class=" d-flex justify-content-center">    
         <nav class="navbar navbar-expand-lg navbar-light bg-light" style="width: 80%;">
-        <a class="navbar-brand" href="#">Hello echo("username")</a>
+        <a class="navbar-brand" href="#">Hello <?php echo($_SESSION['username'])  ?></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -66,11 +90,33 @@
             </form>
 
             <form class="form-inline my-2 my-lg-0">
-                <a href="login.html" class="btn btn-primary"><span style="color: white">Logout</span></a>
+                <a href="login.php" class="btn btn-primary"><span style="color: white">Logout</span></a>
             </form>
         </div>
     </nav>
     </div>
+<?php } 
+
+else { ?>
+    <!-- Navbar -->
+    <div class=" d-flex justify-content-center">    
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="width: 80%;">
+        <a class="navbar-brand" href="#">Hello </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
+
+
+            <form class="form-inline my-2 my-lg-0">
+                <a href="signup.html" class="btn btn-primary"><span style="color: white">Signup</span></a>
+            </form>
+        </div>
+    </nav>
+    </div>
+<?php } ?>
 
 
     <br><br>
@@ -79,7 +125,7 @@
 
         <!-- Gradient -->
         <div class="header__bg"></div>
-        <form>
+        <form action="explore.php" method="POST">
         <div class="row">
             <div class="col-sm-4">
                 <div class="card h-25" style="width:300px">
@@ -125,7 +171,7 @@
     <div class="jumbotron text-center" style="background-color:transparent">
     <div class="btn-group text-center" style="font-family: 'Fira Code', monospace;">
         <div class="row">
-            <div class="col-sm-3"><a href="login.html" class="btn" style="padding: .375rem 5rem;"><b>LOGOUT</b></a></div>
+            <div class="col-sm-3"><a href="login.php" class="btn" style="padding: .375rem 5rem;"><b>LOGOUT</b></a></div>
             <div class="col-sm-3"><button type="button" class="btn" style="padding: .375rem 5rem;"><b>JOIN</b></button>
             </div>
             <div class="col-sm-3"><button type="button" class="btn" style="padding: .375rem 5rem;"><b>ABOUT</b></button>
@@ -140,3 +186,5 @@
 </body>
 
 </html>
+
+
