@@ -56,16 +56,40 @@
         <div class="header__bg"></div>
 
         <div class="row">
-            <div class="col-sm-4">
+            <div class="col-sm-2">
             </div>
-            <div class="col-sm-4">
-                <div class="card" style="width:300px">
+            <div class="col-sm-8">
+                <div class="card" style="width:100%">
                     <div class="card-body">
-                        <p class="card-text text-center">kuch toh achcha intro!</p>
+                        <form action="verifylogin.php">
+                            <div class="form-group">
+                                <p class="d-flex justify-content-center"
+                                    style="font-family: 'Caveat', cursive; font-size: 40px;">
+                                    <b>New Post!</b>
+                                </p>
+                                <br>
+                                <input type="text" class="form-control" placeholder="Enter Title" name="username">
+                                <br>
+
+                                <div class="row">
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" name="category" value="Category">
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" name="date" value="Date" disabled>
+                                </div>
+                                </div>
+
+                                <br>
+                                <textarea class="form-control" rows="10" id="comment"></textarea>
+                            </div>
+                            <br>
+                            <button type="submit" class="btn btn-primary btn-lg btn-block">login</button>
+                        </form>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-2">
             </div>
         </div>
     </div>
@@ -77,10 +101,9 @@
     <div class="jumbotron text-center" style="background-color:transparent">
         <div class="btn-group text-center" style="font-family: 'Fira Code', monospace;">
             <div class="row">
-                <div class="col-sm-3"><a href="login.html" class="btn" style="padding: .375rem 5rem;"><b>LOGIN</b></a>
+                <div class="col-sm-3"><a href="explore.html" class="btn" style="padding: .375rem 5rem;"><b>EXPLORE</b></a>
                 </div>
-                <div class="col-sm-3"><a href="signup.html" class="btn"
-                        style="padding: .375rem 5rem;"><b>SIGNUP</b></a>
+                <div class="col-sm-3"><a href="login.html" class="btn" style="padding: .375rem 5rem;"><b>LOGOUT</b></a>
                 </div>
                 <div class="col-sm-3"><button type="button" class="btn"
                         style="padding: .375rem 5rem;"><b>ABOUT</b></button>

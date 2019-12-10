@@ -48,13 +48,38 @@
     <!-- Header -->
     <p class="text-center" style="font-family: 'Bangers', cursive; font-size: 100px; margin-top: 2%;">Hello World!</p>
 
+
+    <!-- Navbar -->
+    <div class=" d-flex justify-content-center">    
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="width: 80%;">
+        <a class="navbar-brand" href="#">Hello echo("username")</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
+            <form class="form-inline my-2 my-lg-0" style="margin-right: 30px;">
+                <a href="submit.html" class="btn btn-primary"><span
+                            style="color: white">New
+                            Post!</span></a>
+            </form>
+
+            <form class="form-inline my-2 my-lg-0">
+                <a href="login.html" class="btn btn-primary"><span style="color: white">Logout</span></a>
+            </form>
+        </div>
+    </nav>
+    </div>
+
+
     <br><br>
      <!-- Categories -->
     <div class="container">
 
         <!-- Gradient -->
         <div class="header__bg"></div>
-
+        <form>
         <div class="row">
             <div class="col-sm-4">
                 <div class="card h-25" style="width:300px">
@@ -62,7 +87,8 @@
                     <div class="card-body">
                         <h4 class="card-title">TRAVEL</h4>
                         <p class="card-text"></p>
-                        <a href="travel.html" class="btn btn-light col-sm-12" id="travel" name="travel"><b>explore</b></a>
+                        <button class="btn btn-light col-sm-12" type="submit" id="travel"
+                            name="travel"><b>explore</b></button>
                     </div>
                 </div>
             </div>
@@ -72,7 +98,8 @@
                     <div class="card-body">
                         <h4 class="card-title">FOOD</h4>
                         <p class="card-text"></p>
-                        <a href="food.html" class="btn btn-light col-sm-12" id="food" name="food"><b>explore</b></a>
+                        <button class="btn btn-light col-sm-12" type="submit" id="food" 
+                            name="food"><b>explore</b></button>
                     </div>
                 </div>
             </div>
@@ -82,21 +109,23 @@
                     <div class="card-body">
                         <h4 class="card-title">MUSIC</h4>
                         <p class="card-text"></p>
-                        <a href="music.html" class="btn btn-light col-sm-12" id="music" name="music"><b>explore</b></a>
+                        <button class="btn btn-light col-sm-12" type="submit" id="music"
+                            name="music"><b>explore</b></button>
                     </div>
                 </div>
             </div>
         </div>
+        </form>
     </div>
 
-    <br><br><br><br>
+    <br><br>
 
 
     <!-- Footer -->
     <div class="jumbotron text-center" style="background-color:transparent">
     <div class="btn-group text-center" style="font-family: 'Fira Code', monospace;">
         <div class="row">
-            <div class="col-sm-3"><a href="index.html" class="btn" style="padding: .375rem 5rem;"><b>LOGOUT</b></a></div>
+            <div class="col-sm-3"><a href="login.html" class="btn" style="padding: .375rem 5rem;"><b>LOGOUT</b></a></div>
             <div class="col-sm-3"><button type="button" class="btn" style="padding: .375rem 5rem;"><b>JOIN</b></button>
             </div>
             <div class="col-sm-3"><button type="button" class="btn" style="padding: .375rem 5rem;"><b>ABOUT</b></button>

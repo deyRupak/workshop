@@ -18,6 +18,7 @@
     <link href="https://fonts.googleapis.com/css?family=Fira+Code&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Bangers&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Caveat&display=swap" rel="stylesheet">
 
     <!-- Internal CSS -->
     <style>
@@ -46,11 +47,10 @@
 <body>
 
     <!-- Header -->
-    <p class="text-center" style="font-family: 'Bangers', cursive; font-size: 100px; margin-top: 2%;">Hello World!</p>
+    <!-- <p class="text-center" style="font-family: 'Bangers', cursive; font-size: 80px; margin-top: 2%;">Hello World!</p> -->
 
-    <br><br>
     <!-- Categories -->
-    <div class="container">
+    <div class="container" style="margin-top: 7%;">
 
         <!-- Gradient -->
         <div class="header__bg"></div>
@@ -58,29 +58,53 @@
         <div class="row">
             <div class="col-sm-4">
             </div>
+
             <div class="col-sm-4">
                 <div class="card" style="width:300px">
                     <div class="card-body">
-                        <p class="card-text text-center">kuch toh achcha intro!</p>
+
+                        <!-- Login -->
+                        <form action="verifylogin.php">
+                            <div class="form-group">
+                                <p class="d-flex justify-content-center"
+                                    style="font-family: 'Caveat', cursive; font-size: 40px;">
+                                    <b>Hey!</b>
+                                </p>
+                                <br>
+                                <input type="text" class="form-control" placeholder="Enter Username" name="username">
+                                
+                                <br>
+                                <input type="tel" class="form-control" placeholder="Enter Phone No." name="phone">
+                                
+                                <br>
+                                <input type="email" class="form-control" placeholder="Enter Email" name="email">
+
+                                <br>
+                                <input type="password" class="form-control" placeholder="Password" name="password">
+                            </div>
+                            <br>
+                            <button type="submit" class="btn btn-primary btn-lg btn-block">signup</button>
+                        </form><br>
+                           <a href="login.html" class="card-link d-flex justify-content-center">Already Have An Account?</a>
+
                     </div>
                 </div>
             </div>
+
             <div class="col-sm-4">
             </div>
+
         </div>
     </div>
-
-    <br><br><br><br>
 
 
     <!-- Footer -->
     <div class="jumbotron text-center" style="background-color:transparent">
         <div class="btn-group text-center" style="font-family: 'Fira Code', monospace;">
             <div class="row">
-                <div class="col-sm-3"><a href="login.html" class="btn" style="padding: .375rem 5rem;"><b>LOGIN</b></a>
+                <div class="col-sm-3"><a href="index.html" class="btn" style="padding: .375rem 5rem;"><b>HOME</b></a>
                 </div>
-                <div class="col-sm-3"><a href="signup.html" class="btn"
-                        style="padding: .375rem 5rem;"><b>SIGNUP</b></a>
+                <div class="col-sm-3"><a href="login.html" class="btn" style="padding: .375rem 5rem;"><b>LOGIN</b></a>
                 </div>
                 <div class="col-sm-3"><button type="button" class="btn"
                         style="padding: .375rem 5rem;"><b>ABOUT</b></button>
