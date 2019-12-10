@@ -70,8 +70,32 @@ if(isset($_SESSION['username'])){
         <div class="header__bg"></div>
 
         <!-- Row1 -->
-        <div class="row">
-            <div class="col-sm-4">
+        <div class="row" >
+
+
+        <?php
+        include('connect.php');
+        $query = "select * from article where title = '$category'";
+        $res = mysqli_query($conn, $query);
+        while($row=mysqli_fetch_assoc($res)){
+            $title = $row['title'];
+            $content = $row['content'];
+            $username = $row['username'];
+?>
+            <div class="col-sm-4" style="margin-top: 5%;">
+                <div class="card" style="width:300px">
+                    <div class="card-body">
+                        <h4 class="card-title"><?php echo"'$title'";  ?></h4>
+                        <p class="card-text"><?php echo"'$content'"; ?></p>
+                    </div>
+                </div>
+            </div>
+<?php
+        }
+
+
+        ?>
+            <!-- <div class="col-sm-4">
                 <div class="card" style="width:300px">
                     <div class="card-body">
                         <h4 class="card-title">echo ("destination")</h4>
@@ -97,7 +121,7 @@ if(isset($_SESSION['username'])){
             </div>  
         </div>
 
-        <!-- Row2 -->
+        
         <div class="row" style="margin-top: 5%;">
             <div class="col-sm-4">
                 <div class="card" style="width:300px">
@@ -116,7 +140,7 @@ if(isset($_SESSION['username'])){
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <br><br><br><br>
 

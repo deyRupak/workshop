@@ -84,7 +84,7 @@ if(isset($_SESSION['username'])){
 
         <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
             <form class="form-inline my-2 my-lg-0" style="margin-right: 30px;">
-                <a href="submit.html" class="btn btn-primary"><span
+                <a href="submit.php" class="btn btn-primary"><span
                             style="color: white">New
                             Post!</span></a>
             </form>
