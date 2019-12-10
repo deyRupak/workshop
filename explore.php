@@ -196,6 +196,9 @@ else {
         <div class="btn-group text-center" style="font-family: 'Fira Code', monospace;">
             <div class="row">
                 <div class="col-sm-3"><button type="button" class="btn" style="padding: .375rem 5rem;">
+                     <a href="login.php" class="btn" style="padding: .375rem 5rem;"><b>LOGIN</b></a>
+                </div>
+                <div class="col-sm-3"><button type="button" class="btn" style="padding: .375rem 5rem;">
                      <a href="signup.html" class="btn" style="padding: .375rem 5rem;"><b>SIGNUP</b></a>
                 </div>
 
@@ -206,9 +209,7 @@ else {
                 <div class="col-sm-3"><button type="button" class="btn"
                         style="padding: .375rem 5rem;"><b>ABOUT</b></button>
                 </div>
-                <div class="col-sm-3"><button type="button" class="btn"
-                        style="padding: .375rem 5rem;"><b>CONTACT</b></button>
-                </div>
+
 
             </div>
         </div>

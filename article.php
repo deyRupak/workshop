@@ -79,7 +79,7 @@ else {
 
         <?php
         include('connect.php');
-        $query = "select * from article where title = '$category'";
+        $query = "select * from article where category = '$category'";
         $res = mysqli_query($conn, $query);
         if (!(mysqli_num_rows($res) > 0)){ ?>
             <p class="text-center" style="font-family: 'Bangers', cursive; font-size: 80px; margin-top: 2%;">Articles on <?php echo $category,"not found" ;?></p><br>        
@@ -94,10 +94,10 @@ else {
             <div class="col-sm-4" style="margin-top: 5%;">
                 <div class="card" style="width:300px">
                     <div class="card-body">
-                        <!-- <h2 class="card-title"><?php echo"$title";  ?></h2> -->
-                        <h4 class="card-title"><?php echo"By   ","$username";  ?></h4>
-                        <h5 class="card-title"><small><?php echo"On ","$date";  ?></small></h5>
-                        <p class="card-text">&nbsp;&nbsp;&nbsp;&nbsp;<?php echo"$content"; ?></p>
+                        <h4 class="card-title"><?php echo"$title";  ?></h4>
+                        <h6 class="card-title"><?php echo"By   ","$username";  ?></h6>
+                        <h7 class="card-title"><small><?php echo"On ","$date";  ?></small></h7>
+                        <p class="card-text"><?php echo"$content"; ?></p>
                     </div>
                 </div>
             </div>

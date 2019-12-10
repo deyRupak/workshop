@@ -68,12 +68,12 @@
                                     <b>New Post!</b>
                                 </p>
                                 <br>
-                                <input type="text" class="form-control" placeholder="Enter Title" name="title">
+                                <input type="text" class="form-control" placeholder="Enter Title" name="title" required>
                                 <br>
 
                                 <div class="row">
                                 <div class="col-sm-6">
-                                    <input type="text" class="form-control" name="category" placeholder="category">
+                                    <input type="text" class="form-control" name="category" placeholder="category" required>
                                 </div>
                                 <div class="col-sm-6">
                                     <input type="text" class="form-control" name="date" value="Date :<?php echo date("d/m/Y") ?>" disabled>
@@ -81,7 +81,7 @@
                                 </div>
 
                                 <br>
-                                <textarea class="form-control" rows="10" id="comment" name="comment"></textarea>
+                                <textarea class="form-control" rows="10" id="comment" name="comment" required></textarea>
                             </div>
                             <br>
                             <button type="submit" class="btn btn-primary btn-lg btn-block" name="submit">post</button>
