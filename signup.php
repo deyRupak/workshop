@@ -3,6 +3,11 @@
  <?php
     @session_start();
     include('connect.php');
+    //if user is already logged in 
+    if (isset($_SESSION['username'])){
+        echo '<script language="javascript">alert(User is already logged in please logout first )</script>'; 
+        header('refresh:5','location:./index.php');
+    }
     //setting variable using post array
     $user = $_POST['username'];
     $password = $_POST['password'];

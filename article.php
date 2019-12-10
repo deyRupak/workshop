@@ -3,11 +3,15 @@
 
 <?php
 @session_start();
-//session variables
+//variables init if the user is logged in
 if(isset($_SESSION['username'])){
     $username = $_SESSION['username'];
     $phone_no = $_SESSION['phone_no'];
     $email = $_SESSION['email'];
+    $category=$_SESSION['category'];
+}
+//variable init if the user is not logged in
+else {
     $category=$_SESSION['category'];
 }
 
@@ -57,7 +61,7 @@ if(isset($_SESSION['username'])){
 <body>
 
     <!-- Header -->
-    <p class="text-center" style="font-family: 'Bangers', cursive; font-size: 80px; margin-top: 2%;">Hello echo("article_type")</p>
+    <p class="text-center" style="font-family: 'Bangers', cursive; font-size: 80px; margin-top: 2%;">Articles on <?php echo $category ;?></p>
 
 
     
@@ -77,16 +81,23 @@ if(isset($_SESSION['username'])){
         include('connect.php');
         $query = "select * from article where title = '$category'";
         $res = mysqli_query($conn, $query);
+        if (!(mysqli_num_rows($res) > 0)){ ?>
+            <p class="text-center" style="font-family: 'Bangers', cursive; font-size: 80px; margin-top: 2%;">Articles on <?php echo $category,"not found" ;?></p><br>        
+            // <p class="text-center" style="font-family: 'Bangers', cursive; font-size: 80px; margin-top: 2%;"></p>
+        <?php }
         while($row=mysqli_fetch_assoc($res)){
             $title = $row['title'];
             $content = $row['content'];
             $username = $row['username'];
+            $date = $row['date']
 ?>
             <div class="col-sm-4" style="margin-top: 5%;">
                 <div class="card" style="width:300px">
                     <div class="card-body">
-                        <h4 class="card-title"><?php echo"'$title'";  ?></h4>
-                        <p class="card-text"><?php echo"'$content'"; ?></p>
+                        <!-- <h2 class="card-title"><?php echo"$title";  ?></h2> -->
+                        <h4 class="card-title"><?php echo"By   ","$username";  ?></h4>
+                        <h5 class="card-title"><small><?php echo"On ","$date";  ?></small></h5>
+                        <p class="card-text">&nbsp;&nbsp;&nbsp;&nbsp;<?php echo"$content"; ?></p>
                     </div>
                 </div>
             </div>
@@ -95,64 +106,19 @@ if(isset($_SESSION['username'])){
 
 
         ?>
-            <!-- <div class="col-sm-4">
-                <div class="card" style="width:300px">
-                    <div class="card-body">
-                        <h4 class="card-title">echo ("destination")</h4>
-                        <p class="card-text"> echo ("experience")</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="card" style="width:300px">
-                    <div class="card-body">
-                        <h4 class="card-title">echo ("cuisine")</h4>
-                        <p class="card-text"> echo ("experience")</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="card" style="width:300px">
-                    <div class="card-body">
-                        <h4 class="card-title">echo ("tune")</h4>
-                        <p class="card-text"> echo ("experience")</p>
-                    </div>
-                </div>
-            </div>  
-        </div>
-
-        
-        <div class="row" style="margin-top: 5%;">
-            <div class="col-sm-4">
-                <div class="card" style="width:300px">
-                    <div class="card-body">
-                        <h4 class="card-title">echo ("destination")</h4>
-                        <p class="card-text"> echo ("experience")</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="card" style="width:300px">
-                    <div class="card-body">
-                        <h4 class="card-title">echo ("cuisine")</h4>
-                        <p class="card-text"> echo ("experience")</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
     <br><br><br><br>
 
-
+<?php
+if (isset($_SESSION['username'])){
+?>
     <!-- Footer -->
     <div class="jumbotron text-center" style="background-color:transparent">
         <div class="btn-group text-center" style="font-family: 'Fira Code', monospace;">
             <div class="row">
                 <div class="col-sm-3"><a href="login.php" class="btn" style="padding: .375rem 5rem;"><b>LOGOUT</b></a>
                 </div>
-                <div class="col-sm-3"><button type="button" class="btn"
-                        style="padding: .375rem 5rem;"><b>JOIN</b></button>
+                <div class="col-sm-3"><button type="button" class="btn" style="padding: .375rem 5rem;">
+                        <a href="explore.php" class="btn" style="padding: .375rem 5rem;"><b>EXPLORE</b></a>
                 </div>
                 <div class="col-sm-3"><button type="button" class="btn"
                         style="padding: .375rem 5rem;"><b>ABOUT</b></button>
@@ -163,6 +129,32 @@ if(isset($_SESSION['username'])){
             </div>
         </div>
     </div>
+<?php  } 
+else {
+?>
+    <!-- Footer -->
+    <div class="jumbotron text-center" style="background-color:transparent">
+        <div class="btn-group text-center" style="font-family: 'Fira Code', monospace;">
+            <div class="row">
+                <div class="col-sm-3"><button type="button" class="btn" style="padding: .375rem 5rem;">
+                     <a href="signup.php" class="btn" style="padding: .375rem 5rem;"><b>SIGNUP</b></a>
+                </div>
+                <div class="col-sm-3"><button type="button" class="btn" style="padding: .375rem 5rem;">
+                        <a href="explore.php" class="btn" style="padding: .375rem 5rem;"><b>EXPLORE</b></a>
+                </div>
+                <div class="col-sm-3"><button type="button" class="btn"
+                        style="padding: .375rem 5rem;"><b>ABOUT</b></button>
+                </div>
+                <div class="col-sm-3"><button type="button" class="btn"
+                        style="padding: .375rem 5rem;"><b>CONTACT</b></button>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php
+}
+?>
+
 
 
 </body>

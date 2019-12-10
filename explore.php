@@ -2,27 +2,26 @@
 <html lang="en">
 
 <?php
-@session_start();
+session_start();
 //session variables
 if(isset($_SESSION['username'])){
     $username = $_SESSION['username'];
     $phone_no = $_SESSION['phone_no'];
     $email = $_SESSION['email'];
-
-    if (isset($_POST['travel'])){
-        $_SESSION['category']='travel';
-        header('Location:article.php');
-    }
-    //for food
-    else if (isset($_POST['food'])){
-        $_SESSION['category']='food';
-        header('Location:article.php');
-    }
-    //for music
-    else if (isset($_POST['music'])){
-        $_SESSION['category']='music';
-        header('Location:article.php');
-    }
+}
+if (isset($_POST['travel'])){
+    $_SESSION['category']='travel';
+    header('Location:article.php');
+}
+//for food
+else if (isset($_POST['food'])){
+    $_SESSION['category']='food';
+    header('Location:article.php');
+}
+//for music
+else if (isset($_POST['music'])){
+    $_SESSION['category']='music';
+    header('Location:article.php');
 }
 ?>
 <head>
@@ -101,7 +100,7 @@ else { ?>
     <!-- Navbar -->
     <div class=" d-flex justify-content-center">    
         <nav class="navbar navbar-expand-lg navbar-light bg-light" style="width: 80%;">
-        <a class="navbar-brand" href="#">Hello </a>
+        <a class="navbar-brand" href="#">Hey Stranger (or something good) </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -167,21 +166,57 @@ else { ?>
     <br><br>
 
 
+
+    <?php
+if (isset($_SESSION['username'])){
+?>
     <!-- Footer -->
     <div class="jumbotron text-center" style="background-color:transparent">
-    <div class="btn-group text-center" style="font-family: 'Fira Code', monospace;">
-        <div class="row">
-            <div class="col-sm-3"><a href="login.php" class="btn" style="padding: .375rem 5rem;"><b>LOGOUT</b></a></div>
-            <div class="col-sm-3"><button type="button" class="btn" style="padding: .375rem 5rem;"><b>JOIN</b></button>
-            </div>
-            <div class="col-sm-3"><button type="button" class="btn" style="padding: .375rem 5rem;"><b>ABOUT</b></button>
-            </div>
-            <div class="col-sm-3"><button type="button" class="btn" style="padding: .375rem 5rem;"><b>CONTACT</b></button>
+        <div class="btn-group text-center" style="font-family: 'Fira Code', monospace;">
+            <div class="row">
+                <div class="col-sm-3"><a href="login.php" class="btn" style="padding: .375rem 5rem;"><b>LOGOUT</b></a>
+                </div>
+                <div class="col-sm-3"><button type="button" class="btn" style="padding: .375rem 5rem;">
+                        <a href="explore.php" class="btn" style="padding: .375rem 5rem;"><b>EXPLORE</b></a>
+                </div>
+                <div class="col-sm-3"><button type="button" class="btn"
+                        style="padding: .375rem 5rem;"><b>ABOUT</b></button>
+                </div>
+                <div class="col-sm-3"><button type="button" class="btn"
+                        style="padding: .375rem 5rem;"><b>CONTACT</b></button>
+                </div>
             </div>
         </div>
     </div>
+<?php  } 
+else {
+?>
+    <!-- Footer -->
+    <div class="jumbotron text-center" style="background-color:transparent">
+        <div class="btn-group text-center" style="font-family: 'Fira Code', monospace;">
+            <div class="row">
+                <div class="col-sm-3"><button type="button" class="btn" style="padding: .375rem 5rem;">
+                     <a href="signup.html" class="btn" style="padding: .375rem 5rem;"><b>SIGNUP</b></a>
+                </div>
+
+                <div class="col-sm-3"><button type="button" class="btn" style="padding: .375rem 5rem;">
+                        <a href="explore.php" class="btn" style="padding: .375rem 5rem;"><b>EXPLORE</b></a>
+                </div>
+
+                <div class="col-sm-3"><button type="button" class="btn"
+                        style="padding: .375rem 5rem;"><b>ABOUT</b></button>
+                </div>
+                <div class="col-sm-3"><button type="button" class="btn"
+                        style="padding: .375rem 5rem;"><b>CONTACT</b></button>
+                </div>
+
+            </div>
+        </div>
     </div>
-        
+<?php
+}
+?>
+      
     
 </body>
 
