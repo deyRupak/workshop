@@ -64,28 +64,28 @@
                     <div class="card-body">
 
                         <!-- Login -->
-                        <form action="verifylogin.php">
+                        <form action="signup.php" method="POST">
                             <div class="form-group">
                                 <p class="d-flex justify-content-center"
                                     style="font-family: 'Caveat', cursive; font-size: 40px;">
                                     <b>Hey!</b>
                                 </p>
                                 <br>
-                                <input type="text" class="form-control" placeholder="Enter Username" name="username">
+                                <input type="text" class="form-control" placeholder="Enter Username" name="username" required>
                                 
                                 <br>
-                                <input type="tel" class="form-control" placeholder="Enter Phone No." name="phone">
+                                <input type="tel" class="form-control" placeholder="Enter Phone No." name="phone" required>
                                 
                                 <br>
-                                <input type="email" class="form-control" placeholder="Enter Email" name="email">
+                                <input type="email" class="form-control" placeholder="Enter Email" name="email" required>
 
                                 <br>
-                                <input type="password" class="form-control" placeholder="Password" name="password">
+                                <input type="password" class="form-control" placeholder="Password" name="password" required>
                             </div>
                             <br>
                             <button type="submit" class="btn btn-primary btn-lg btn-block">signup</button>
                         </form><br>
-                           <a href="login.html" class="card-link d-flex justify-content-center">Already Have An Account?</a>
+                           <a href="login.php" class="card-link d-flex justify-content-center">Already Have An Account?</a>
 
                     </div>
                 </div>
@@ -102,9 +102,9 @@
     <div class="jumbotron text-center" style="background-color:transparent">
         <div class="btn-group text-center" style="font-family: 'Fira Code', monospace;">
             <div class="row">
-                <div class="col-sm-3"><a href="index.html" class="btn" style="padding: .375rem 5rem;"><b>HOME</b></a>
+                <div class="col-sm-3"><a href="index.php" class="btn" style="padding: .375rem 5rem;"><b>HOME</b></a>
                 </div>
-                <div class="col-sm-3"><a href="login.html" class="btn" style="padding: .375rem 5rem;"><b>LOGIN</b></a>
+                <div class="col-sm-3"><a href="login.php" class="btn" style="padding: .375rem 5rem;"><b>LOGIN</b></a>
                 </div>
                 <div class="col-sm-3"><button type="button" class="btn"
                         style="padding: .375rem 5rem;"><b>ABOUT</b></button>

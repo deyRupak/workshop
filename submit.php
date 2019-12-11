@@ -18,7 +18,6 @@
     <link href="https://fonts.googleapis.com/css?family=Fira+Code&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Bangers&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Caveat&display=swap" rel="stylesheet">
 
     <!-- Internal CSS -->
     <style>
@@ -47,48 +46,51 @@
 <body>
 
     <!-- Header -->
-    <!-- <p class="text-center" style="font-family: 'Bangers', cursive; font-size: 80px; margin-top: 2%;">Hello World!</p> -->
+    <p class="text-center" style="font-family: 'Bangers', cursive; font-size: 100px; margin-top: 2%;">Hello World!</p>
 
+    <br><br>
     <!-- Categories -->
-    <div class="container" style="margin-top: 7%;">
+    <div class="container">
 
         <!-- Gradient -->
         <div class="header__bg"></div>
 
         <div class="row">
-            <div class="col-sm-4">
+            <div class="col-sm-2">
             </div>
-
-            <div class="col-sm-4">
-                <div class="card" style="width:450px">
+            <div class="col-sm-8">
+                <div class="card" style="width:100%">
                     <div class="card-body">
-
-                        <!-- Login -->
-                        <form action="verifylogin.php">
+                        <form action="submit_1.php" method="POST">
                             <div class="form-group">
-                                <p class="d-flex justify-content-center" style="font-family: 'Caveat', cursive; font-size: 40px;">
-                                    <b>Good To See You Again!</b>
+                                <p class="d-flex justify-content-center"
+                                    style="font-family: 'Caveat', cursive; font-size: 40px;">
+                                    <b>New Post!</b>
                                 </p>
                                 <br>
-                                <input type="text" class="form-control" placeholder="Enter Username" name="username">
+                                <input type="text" class="form-control" placeholder="Enter Title" name="title" required>
+                                <br>
+
+                                <div class="row">
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" name="category" placeholder="category" required>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" name="date" value="Date :<?php echo date("d/m/Y") ?>" disabled>
+                                </div>
+                                </div>
 
                                 <br>
-                                <input type="password" class="form-control" placeholder="Password" name="password">
+                                <textarea class="form-control" rows="10" id="comment" name="comment" required></textarea>
                             </div>
                             <br>
-                            <br>
-                            <a href="#" class="card-link d-flex justify-content-center">Forgot Password?</a>
-                            <br><br>
-                            <button type="submit" class="btn btn-primary btn-lg btn-block">login</button>
+                            <button type="submit" class="btn btn-primary btn-lg btn-block" name="submit">post</button>
                         </form>
-
                     </div>
                 </div>
             </div>
-
-            <div class="col-sm-4">
+            <div class="col-sm-2">
             </div>
-
         </div>
     </div>
 
@@ -99,20 +101,24 @@
     <div class="jumbotron text-center" style="background-color:transparent">
         <div class="btn-group text-center" style="font-family: 'Fira Code', monospace;">
             <div class="row">
-                <div class="col-sm-3"><a href="index.html" class="btn" style="padding: .375rem 5rem;"><b>HOME</b></a>
+                <div class="col-sm-3"><a href="login.php" class="btn" style="padding: .375rem 5rem;"><b>LOGOUT</b></a>
                 </div>
-                <div class="col-sm-3"><a href="signup.html" class="btn"
-                        style="padding: .375rem 5rem;"><b>SIGNUP</b></a>
+
+                <div class="col-sm-3"><button type="button" class="btn" style="padding: .375rem 5rem;">
+                     <a href="signup.html" class="btn" style="padding: .375rem 5rem;"><b>JOIN US</b></a>
                 </div>
-                <div class="col-sm-3"><button type="button" class="btn"
-                        style="padding: .375rem 5rem;"><b>ABOUT</b></button>
+
+                <div class="col-sm-3"><button type="button" class="btn" style="padding: .375rem 5rem;">
+                        <a href="explore.php" class="btn" style="padding: .375rem 5rem;"><b>EXPLORE</b></a>
                 </div>
+
                 <div class="col-sm-3"><button type="button" class="btn"
                         style="padding: .375rem 5rem;"><b>CONTACT</b></button>
                 </div>
             </div>
         </div>
     </div>
+
 
 
 </body>
